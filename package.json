@@ -1,0 +1,25 @@
+{
+  "name": "FrontEndDevEnviornment",
+  "version": "1.0.0",
+  "description": "Boilerplate front-end project directory/taskrunner",
+  "main": "http-server ./dist",
+  "scripts": {
+    "test": "http-server ./dev & mocha"
+  },
+  "author": "Nicolas Hampton",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-tsconfig": "^0.1.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-uglify": "^1.5.1",
+    "merge2": "^1.0.1",
+    "mocha": "^2.4.5",
+    "zombie": "^4.2.1"
+  }
+}
