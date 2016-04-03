@@ -1,0 +1,71 @@
+%all-elements {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+%sticky {
+  color: $primary-color;
+  background-color: $secondary-color;
+  width: 100%;
+  position:fixed;
+}
+
+%centered {
+	text-align: center;
+	margin: 0 auto;
+}
+
+%clearfix {
+ &:after {
+  	content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+%type-margins {
+  margin: $text-margins;
+}
+
+%text-style {
+  font-family: $text-font;
+  line-height: $text-line-height;
+  font-weight: $text-weight;
+}
+
+%section-style {
+  @extend %text-style;
+  padding: $vertical-spacing $horizontal-spacing;
+  text-transform: $section-transform;
+  letter-spacing: $section-letter-spacing;
+}
+
+%header-style {
+  font-family: $header-font;
+  line-height: $header-line-height;
+  font-weight: $header-weight;
+}
+
+%main-nav {
+  @extend %centered;
+  padding-top: $vertical-spacing;
+  padding-bottom: $vertical-spacing;
+  width: $main-width;
+  li:first-child {
+    margin-bottom: $vertical-spacing;
+    @include mobile {
+      float: left;
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+  }
+  li:not(:first-child) {
+    background-color: $primary-color;
+    border-radius: $box-radius;
+    @include link($secondary-color, $secondary-color);
+    @include mobile {
+      float: right;
+      margin-left: $horizontal-spacing;
+    }
+  }
+}

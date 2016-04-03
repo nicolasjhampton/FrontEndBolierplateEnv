@@ -1,2 +1,7 @@
 /node_modules
 /.sass-cache
+/dev
+/dist
+app.d.ts
+app.js
+tsconfig.json

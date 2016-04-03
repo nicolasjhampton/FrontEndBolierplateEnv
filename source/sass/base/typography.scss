@@ -1,0 +1,19 @@
+/*********************
+  Headers
+**********************/
+
+h1 {
+  @extend %header-style;
+  font-size: $header-one-size;
+}
+
+h3 {
+  @extend %section-style;
+  font-size: $section-size;
+}
+
+p {
+  @extend %text-style;
+  @extend %type-margins;
+  font-size: $paragraph-size;
+}

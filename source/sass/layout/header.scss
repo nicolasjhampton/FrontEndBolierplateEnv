@@ -1,0 +1,7 @@
+header {
+  @extend %clearfix;
+  @extend %sticky;
+  .main-nav {
+    @extend %main-nav;
+  }
+}

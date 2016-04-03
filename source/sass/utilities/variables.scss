@@ -1,0 +1,76 @@
+/*******************
+  Widths
+ *******************/
+
+$main-width: 90vw;
+$horizontal-spacing: 2vw;
+
+/*******************
+  heights
+ *******************/
+
+$viewport-height: 100vh;
+$footer-height: 5vh;
+$container-height: .5vh + $viewport-height - $footer-height;
+$container-height-mobile: $container-height - $footer-height;
+
+$vertical-spacing: $footer-height/5;
+$box-radius: .25rem;
+
+/*******************
+  Fonts
+ *******************/
+
+$text-font: 'EB Garamond', serif;
+$text-weight: normal;
+
+$header-font: 'Dancing Script', cursive;
+$header-weight: 700;
+
+/*******************
+  Font sizes
+ *******************/
+
+$paragraph-size: $vertical-spacing * 2.25; /*16px;*/
+$section-size: $vertical-spacing * 3;
+$header-one-size: $vertical-spacing * 5;
+
+/*******************
+  Text spacing
+ *******************/
+
+$text-line-height: $vertical-spacing * 4;
+$header-line-height: $text-line-height * 2;
+
+$text-margins: 0 0 $text-line-height 0;
+$centering-margins: 0 auto;
+
+$section-letter-spacing: $horizontal-spacing * .83 * .5; /*.83vm;*/
+$section-transform: uppercase;
+
+/*******************
+  Color palette
+ *******************/
+
+$site-background-color: black;
+$main-background-color: white;
+
+$primary-color: $main-background-color;
+$secondary-color: $site-background-color;
+
+/*******************
+  Media queries
+ *******************/
+
+$footer-width: 210px;
+$mobile-width: 318px;
+$tablet-width: 478px;
+$desktop-width: 478px;
+
+/*******************
+  Section values
+ *******************/
+
+$main-padding: ($footer-height * 3) + ($vertical-spacing * 9) 0 $footer-height*2;
+$main-padding-mobile: ($footer-height * 2) + ($vertical-spacing * 6) 0 $footer-height;
+$main-padding-tablet: $footer-height + ($vertical-spacing * 3) 0 $footer-height;

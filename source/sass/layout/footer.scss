@@ -1,0 +1,10 @@
+footer {
+  @extend %clearfix;
+  @extend %sticky;
+  p {
+    @extend %centered;
+    letter-spacing: $section-letter-spacing;
+    line-height: $footer-height;
+    margin: 0;
+  }
+}

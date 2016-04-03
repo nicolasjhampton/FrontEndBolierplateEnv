@@ -1,0 +1,36 @@
+@mixin footer-break {
+	@media (min-width: #{$footer-width}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (min-width: #{$mobile-width}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin link($primary, $secondary) {
+  a {
+    color: $primary;
+    text-decoration: none;
+    &:visited {
+      color: $primary;
+    }
+    &:hover {
+      color: $secondary;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+* {
+  @extend %all-elements;
+}
+
+body {
+  background-color: $site-background-color;
+}
+
+.upper {
+  height: $container-height-mobile;
+
+  @include footer-break {
+    height: $container-height;
+  }
+}
