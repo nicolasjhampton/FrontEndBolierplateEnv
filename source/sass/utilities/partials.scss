@@ -1,18 +1,22 @@
 %all-elements {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  @include box-sizing();
 }
 
-%sticky {
-  color: $primary-color;
-  background-color: $secondary-color;
-  width: 100%;
-  position:fixed;
+%vertical-spacing {
+  margin-top: $text-margins;
+  &:last-child {
+    margin-bottom: $text-margins;
+  }
 }
 
 %centered {
 	text-align: center;
 	margin: 0 auto;
+}
+
+%header-footer-palette {
+  color: $primary-color;
+  background-color: $header-footer-color;
 }
 
 %clearfix {
@@ -23,49 +27,128 @@
   }
 }
 
-%type-margins {
-  margin: $text-margins;
+%sticky {
+  @extend %header-footer-palette;
+  width: 100%;
+  position:fixed;
 }
 
 %text-style {
-  font-family: $text-font;
-  line-height: $text-line-height;
-  font-weight: $text-weight;
+  @include text-style($text-font, $text-weight, $text-line-height);
 }
 
 %section-style {
-  @extend %text-style;
+  @include text-style($text-font, $text-weight, $text-line-height);
   padding: $vertical-spacing $horizontal-spacing;
+  padding-left: $horizontal-spacing+$section-letter-spacing; /*accommodates for the letter-spacing*/
   text-transform: $section-transform;
   letter-spacing: $section-letter-spacing;
 }
 
 %header-style {
-  font-family: $header-font;
-  line-height: $header-line-height;
-  font-weight: $header-weight;
+  @include text-style($header-font, $header-weight, $header-line-height);
 }
 
-%main-nav {
-  @extend %centered;
-  padding-top: $vertical-spacing;
-  padding-bottom: $vertical-spacing;
-  width: $main-width;
-  li:first-child {
-    margin-bottom: $vertical-spacing;
-    @include mobile {
-      float: left;
-      background-color: $secondary-color;
-      color: $primary-color;
+
+
+%form {
+
+  //form {
+    //@include side-margins();
+
+    label, input, button {
+      // display: block;
+      @extend %vertical-spacing;
     }
-  }
-  li:not(:first-child) {
-    background-color: $primary-color;
-    border-radius: $box-radius;
-    @include link($secondary-color, $secondary-color);
-    @include mobile {
-      float: right;
-      margin-left: $horizontal-spacing;
+
+    label {
+      background-color: invert($primary-color);
+      @include border-radius($box-radius);
+      display: inline-block;
+      padding: 10px;
+      @include break("tablet") {
+        display: inline-block;
+        @include side-margins(29%);
+      }
+      & + input[type="text"],
+      & + input[type="email"],
+      & + input[type="tel"],
+      & + input[type="password"] {
+        background-color: lighten(invert($primary-color), 20%);
+        @include border-radius($box-radius);
+        padding: $vertical-spacing $horizontal-spacing;
+        border: 5px solid invert($primary-color);
+        @include side-margins(100%);
+        &:focus {
+          background-color: white;
+          outline: none;
+        }
+        @include break("tablet") {
+          display: inline-block;
+          @include side-margins(70%);
+        }
+      }
     }
-  }
+
+    // input {
+    //   background-color: lighten(invert($primary-color), 20%);
+    //   @include border-radius($box-radius);
+    //   padding: $vertical-spacing $horizontal-spacing;
+    //   border: 5px solid invert($primary-color);
+    //   @include side-margins(100%);
+    //   &:focus {
+    //     background-color: white;
+    //     outline: none;
+    //   }
+    //   @include break("tablet") {
+    //     display: inline-block;
+    //     @include side-margins(70%);
+    //   }
+    // }
+
+    // input[type="text"],
+    // input[type="email"],
+    // input[type="tel"],
+    // input[type="password"] {
+    //
+    //   background-color: lighten(invert($primary-color), 20%);
+    //   @include border-radius($box-radius);
+    //   padding: $vertical-spacing $horizontal-spacing;
+    //   border: 5px solid invert($primary-color);
+    //   @include side-margins(100%);
+    //   &:focus {
+    //     background-color: white;
+    //     outline: none;
+    //   }
+    //   @include break("tablet") {
+    //     display: inline-block;
+    //     @include side-margins(70%);
+    //   }
+    // }
+
+    // input[type="submit"] {
+    //   @include border-radius($box-radius);
+    //   @extend %section-style;
+    //   font-weight: bold;
+    //   color: invert($primary-color);
+    //   background-color: complement($primary-color);
+    //   border: 5px solid invert($primary-color);
+    //   @include side-margins(100%);
+    //   cursor: pointer;
+    //   text-decoration: none;
+    //
+    //   &:hover {
+    //     color: lighten(invert($primary-color), 20%);
+    //     border: 5px solid complement($primary-color);
+    //   }
+    //   &:active {
+    //     color: $primary-color;
+    //     outline: none;
+    //   }
+    //   &:focus {
+    //     color: $primary-color;
+    //     outline: none;
+    //   }
+    // }
+  //}
 }

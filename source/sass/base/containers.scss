@@ -9,7 +9,48 @@ body {
 .upper {
   height: $container-height-mobile;
 
-  @include footer-break {
+  @include break("footer") {
     height: $container-height;
+  }
+}
+
+header {
+  @extend %clearfix;
+  @extend %sticky;
+  @include main-nav($primary-color, $box-radius, $vertical-spacing, $horizontal-spacing);
+}
+
+footer {
+  @extend %clearfix;
+  @extend %sticky;
+  p {
+    @extend %centered;
+    letter-spacing: $section-letter-spacing;
+    line-height: $footer-height;
+  }
+}
+
+.main {
+
+  padding: $main-padding;
+  background-color: $main-background-color;
+  min-height: $viewport-height;
+  @include side-margins();
+
+  .row1 {
+    @include row(1, 2%, 700px);
+  }
+  .row2 {
+    @include row(1, 2%, 250px, center);
+  }
+  .row3 {
+    @include row(3, 2%);
+  }
+
+  @include break("mobile") {
+    padding: $main-padding-mobile;
+  }
+  @include break("tablet") {
+    padding: $main-padding-tablet;
   }
 }

@@ -1,0 +1,227 @@
+@mixin placeholderText() {
+
+  /* Helper mixin for the textfield mixin */
+
+  &::input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+}
+
+@mixin form() {
+
+  /* All form elements designed to be used with this mixin */
+  /* Designed for this html structure, apply to form
+  <form action="#" method="POST">
+    <fieldset></fieldset>
+    <fieldset></fieldset>
+    <fieldset></fieldset>
+  </form>
+	*/
+
+  background-color: transparent;
+
+  & > * {
+    @include card(1, lighten(complement($primary-color), 20%));
+  }
+
+  & * {
+    @include border-radius($form-radius);
+    @include text-style($form-font, $form-weight, $form-line-height);
+    font-size: $form-text-size;
+    vertical-align: top;
+    display: inline-block;
+    border: 5px solid invert($primary-color);
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+@mixin textfields($placeholder-color, $label-size: 30%, $field-size: 70%) {
+
+  /* Use with the form mixin */
+  /* Designed for this html structure, apply to fieldset
+  <fieldset>
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" placeholder="Enter name" pattern="@[A-Za-z0-9]+" required>
+  </fieldset>
+	*/
+
+	label {
+    padding: 0 $form-horizontal-spacing;
+
+    &:first-child {
+      margin-top: 0;
+    }
+		@include break("tablet") {
+			@include side-margins($label-size - 1%);
+		}
+
+		& + input[type="text"],
+		& + input[type="email"],
+		& + input[type="tel"],
+		& + input[type="password"] {
+      @include side-margins(100%);
+			padding: 0 $form-horizontal-spacing;
+      margin-bottom: $form-vertical-spacing;
+      margin-top: $form-vertical-spacing/3;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:focus {
+				background-color: $form-focus-color;
+				outline: none;
+			}
+      @include placeholderText {
+        color: lighten($placeholder-color, 10%);
+      }
+      @include break("tablet") {
+				@include side-margins($field-size);
+        margin-top: 0;
+			}
+		}
+	}
+}
+
+@mixin select($placeholder-color, $select-icon: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-arrow-down.svg), $label-size: 30%, $field-size: 70%) {
+
+  /* Use with the form mixin */
+  /* Designed for this html structure, apply to fieldset
+	<fieldset>
+    <label for="select">Selectbox</label>
+    <select name="select" id="select">
+      <option selected disabled hidden value="">Placeholder</option>
+      <option value="whatever">Some option</option>
+    </select>
+	</fieldset>
+	*/
+
+	label {
+
+    padding: 0 $form-horizontal-spacing;
+
+    &:first-child {
+      margin-top: 0;
+    }
+		@include break("tablet") {
+			@include side-margins($label-size - 1%);
+		}
+
+    & + select {
+
+      @include side-margins(100%);
+      padding: 0 $form-horizontal-spacing;
+      margin-bottom: $form-vertical-spacing;
+      margin-top: $form-vertical-spacing/3;
+      font-size: $form-text-size;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: $select-icon 95% / 5% no-repeat;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:focus {
+        background-color: $form-focus-color;
+        outline: none;
+      }
+      @include placeholderText {
+        color: lighten($placeholder-color, 10%);
+      }
+      @include break("tablet") {
+        @include side-margins($field-size);
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+
+@mixin checkbox($sprite-sheet, $check-width, $check-height, $type:"checkbox") {
+
+  /* Use with the form mixin */
+	/* Designed for this html structure, apply to fieldset
+	<fieldset>
+		<input type="checkbox" id="check1">
+		<label for="check1"><span></span><h3>Check Box 1</h3></label>
+	</fieldset>
+	*/
+
+  text-align: center;
+
+  input[type=#{$type}] {
+    display:none;
+
+    &:checked + label span {
+      background: url($sprite-sheet) right top no-repeat;
+    }
+
+		& + label {
+      line-height: $check-height/3;
+      margin-bottom: $check-height/3;
+
+      p, span {
+        border: none;
+      }
+
+			p {
+				line-height: $check-height/3;
+				padding: $check-height/3;
+			}
+
+			span {
+        width: $check-width; /* width of checkbox */
+        height:$check-height; /* height of checkbox */
+        background:url($sprite-sheet) left top no-repeat;
+	    }
+		}
+  }
+}
+
+@mixin submit() {
+
+  /* Use with the form mixin */
+  /* Designed for this html structure, apply to fieldset
+	<fieldset>
+    <input type="submit">
+	</fieldset>
+	*/
+
+	input[type="submit"] {
+		@include side-margins(100%);
+    text-transform: uppercase;
+		text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+
+		&:hover {
+			color: $form-focus-color;
+			border: 5px solid invert(invert($primary-color));
+      background-color: invert($primary-color);
+		}
+		&:active {
+			color: $primary-color;
+			outline: none;
+		}
+		&:focus {
+			color: $primary-color;
+			outline: none;
+		}
+	}
+}

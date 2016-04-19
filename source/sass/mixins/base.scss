@@ -1,0 +1,66 @@
+@mixin break($break) {
+	@if $break == "footer" {
+		@media (min-width: #{$footer-width}) {
+			@content;
+		}
+	}
+	@else if $break == "mobile" {
+		@media (min-width: #{$mobile-width}) {
+			@content;
+		}
+	}
+	@else if $break == "tablet" {
+		@media (min-width: #{$tablet-width}) {
+			@content;
+		}
+	}
+	@else if $break == "desktop" {
+		@media (min-width: #{$desktop-width}) {
+			@content;
+		}
+	}
+	@else {
+		@error "Whoops, No value could be retrieved for '#{$break}'.";
+	}
+}
+
+@mixin text-style($font, $weight, $line-height) {
+  font-family: $font;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin side-margins($percentage: $main-width) {
+  width: $percentage;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin link($normal-text-color) {
+
+	/* Designed for this html structure, apply to div
+	<div>
+		<a href="#">Home</a>
+	</div>
+	*/
+
+  a {
+    color: invert($normal-text-color);
+    cursor: pointer;
+    text-decoration: none;
+    &:visited {
+      color: complement($normal-text-color);
+    }
+    &:hover {
+      color: complement(invert($normal-text-color));
+    }
+    &:active {
+      color: $normal-text-color;
+      outline: none;
+    }
+    &:focus {
+      color: $normal-text-color;
+      outline: none;
+    }
+  }
+}

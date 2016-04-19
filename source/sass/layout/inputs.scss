@@ -1,0 +1,15 @@
+form {
+  @include form();
+}
+.checkboxes {
+  @include checkbox("../images/slice1.png", 25px, 25px);
+}
+.textfields {
+  @include textfields($primary-color);
+}
+.select {
+  @include select($primary-color);
+}
+.submit {
+  @include submit();
+}

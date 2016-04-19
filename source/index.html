@@ -3,20 +3,18 @@
 	<head>
     <title>Title | Boilerplate</title>
 		<meta chartype="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://normalize-css.googlecode.com/svn/trunk/normalize.css">
-		<link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://normalize-css.googlecode.com/svn/trunk/normalize.css">
+		<link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" /> -->
 		<link rel="stylesheet" type="text/css" href="css/application.css">
   </head>
   <body>
 		<div class="upper">
 
-
 			<header>
-
 				<nav class="main-nav">
 					<ul>
 						<li>
-							<h3 class="nav-title">Title of site</h3>
+							<h3>Title of site</h3>
 						</li>
 						<li>
 							<a href="#"><h3>Home</h3></a>
@@ -29,29 +27,78 @@
 			</header>
 
 			<div class="main">
-				<div>
-					<p>
-						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-					</p>
+				<div class="row1">
+					<div class="card">
+						<form class="form" action="register.html" method="POST">
+							<fieldset class="textfields">
+								<label for="username">Username:</label>
+								<input id="username" name="username" type="text" placeholder="@yourusername" pattern="@[A-Za-z0-9]+" required>
+								<label for="email">Username:</label>
+								<input id="email" name="email" type="email" placeholder="Required" required>
+								<label for="password">Username:</label>
+								<input id="password" name="password" type="password" placeholder="Required" required>
+								<label for="confirmPassword">Username:</label>
+								<input id="confirmPassword" name="confirmPassword" type="password" placeholder="Required" required>
+							</fieldset>
+							<fieldset class="checkboxes">
+								<input type="checkbox" id="check1" name="boxes" value="checkbox1">
+								<label for="check1"><span></span><p>Check Box 1</p></label>
+								<input type="checkbox" id="check2" name="boxes" value="checkbox2">
+								<label for="check2"><span></span><p>Check Box 2</p></label>
+								<input type="checkbox" id="check3" name="boxes" value="checkbox3">
+								<label for="check3"><span></span><p>Check Box 3</p></label>
+							</fieldset>
+							<fieldset class="select">
+								<label for="country">Country</label>
+								<select name="country" id="country">
+									<option selected disabled hidden value="">The Day</option>
+									<option value="boring">Boring World</option>
+									<option value="candy">Candy World</option>
+									<option value="smart">Smart World</option>
+								</select>
+							</fieldset>
+							<fieldset class="submit">
+								<input class="button" type="submit">
+							</fieldset>
+						</form>
+					</div>
 				</div>
-				<div>
-					<p>
-						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-					</p>
+
+				<div class="row2">
+					<div class="card checkboxes">
+						<input type="checkbox" id="check4" name="boxes2" value="checkbox4">
+						<label for="check4"><span></span><p>Check Box 1</p></label>
+						<input type="checkbox" id="check5" name="boxes2" value="checkbox5">
+						<label for="check5"><span></span><p>Check Box 2</p></label>
+						<input type="checkbox" id="check6" name="boxes2" value="checkbox6">
+						<label for="check6"><span></span><p>Check Box 3</p></label>
+					</div>
 				</div>
-				<div>
-					<p>
-						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-					</p>
+
+				<div class="row3">
+					<div class="card">
+						<p>
+							"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+						</p>
+					</div>
+
+					<div class="card">
+						<p>
+							"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+						</p>
+					</div>
+
+					<div class="card">
+						<p>
+							"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+						</p>
+					</div>
 				</div>
-
-
-
-
-
-
 	    </div>
+
 		</div>
+
+
 		<footer>
         <p>&copy; 2016 Nicolas James Hampton</p>
     </footer>

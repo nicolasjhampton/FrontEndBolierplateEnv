@@ -129,8 +129,6 @@ gulp.task('copyCss',['compileSass'], function() {
 		.pipe(gulp.dest(options.dist.css));
 });
 
-
-
 gulp.task('watchSass', function() {
 	return gulp.watch([options.src.sass + '**/*.scss'], ['copyCss']);
 });

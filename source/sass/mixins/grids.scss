@@ -1,0 +1,60 @@
+@mixin card($no-of-cards-in-row, $color, $spacing: 1%) {
+
+  /* Designed for this html structure, apply to div
+  <div class="card">
+  <div class="any other element"></div>
+  </div>
+  */
+
+  width: (98% - ($spacing * $no-of-cards-in-row * 2))/ $no-of-cards-in-row;  // $no-of-cards-in-row;
+  margin-right: $spacing;
+  margin-left: $spacing;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: $text-margins;
+  padding: $text-margins;
+  -moz-border-radius: $box-radius;
+  -webkit-border-radius: $box-radius;
+  border-radius: $box-radius;
+  background-color: $color;
+  box-shadow: 5px 5px 5px $primary-reverse-color;
+  transition: all .5s;
+  &:hover {
+    box-shadow: 5px 5px 20px $primary-reverse-color;
+  }
+  &:last-child {
+    margin-bottom: $text-margins;
+  }
+  &:after {
+   	content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin row($no-of-items:1, $spacing:5%, $max-card-size:100% , $card-align: left) {
+
+  /* Designed for this html structure, apply to div containing card classes
+  <div class="divYouWanrtToBeARow">
+  <div class="card"></div><div class="card"></div><div class="card"></div>
+  </div>*/
+
+  text-align: center;
+  .card {
+		max-width: $max-card-size;
+		text-align: $card-align;
+    @include card(1, $primary-complement-color, $spacing);
+
+    @if ($no-of-items > 1) {
+      @include break("tablet") {
+        @include card(2, $primary-complement-color, $spacing);
+      }
+    }
+
+    @if ($no-of-items > 2) {
+      @include break("desktop") {
+        @include card(3, $primary-complement-color, $spacing);
+      }
+    }
+  }
+}

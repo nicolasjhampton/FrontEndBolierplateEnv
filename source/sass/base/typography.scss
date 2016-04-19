@@ -14,6 +14,5 @@ h3 {
 
 p {
   @extend %text-style;
-  @extend %type-margins;
   font-size: $paragraph-size;
 }
